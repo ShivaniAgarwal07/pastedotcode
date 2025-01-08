@@ -32,7 +32,7 @@ const ViewPaste = () => {
             
             {/* Circle and copy btn */}
             <div
-              className={`w-fit rounded-t flex items-center justify-between gap-x-4 px-4`}
+              className={`w-full rounded-t flex items-center justify-end gap-x-4 px-4`}
             >
               {/*Copy  button */}
               <button

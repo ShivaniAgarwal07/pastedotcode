@@ -54,7 +54,6 @@ const Home = () => {
     }
   }, [pasteId, pastes]);
 
-
   return (
     <div className="w-[100vw] min-h-screen py-10 max-w-[1200px] mx-auto px-5 lg:px-0">
       <div className="flex flex-col gap-y-5 items-start">
@@ -76,12 +75,14 @@ const Home = () => {
             {pasteId ? "Update Paste" : "Create My Paste"}
           </button>
 
-        {pasteId &&  <button
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700"
-            onClick={resetPaste}
-          >
-            <PlusCircle size={20} />
-          </button>}
+          {pasteId && (
+            <button
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700"
+              onClick={resetPaste}
+            >
+              <PlusCircle size={20} />
+            </button>
+          )}
         </div>
 
         <div
@@ -90,14 +91,13 @@ const Home = () => {
           <div
             className={`w-full rounded-t flex items-center justify-between gap-x-4 px-4 py-2 border-b border-[rgba(128,121,121,0.3)]`}
           >
-            
             {/* Circle and copy btn */}
             <div
-              className={`w-fit rounded-t flex items-end justify-between gap-x-4 px-60`}
+              className={`w-full flex justify-end items-center gap-x-4  rounded-t`}
             >
-              {/*Copy  button */}
+              {/* Copy button */}
               <button
-                className={`flex justify-center items-end  transition-all duration-300 ease-in-out group`}
+                className={`flex items-center transition-all duration-300 ease-in-out group`}
                 onClick={() => {
                   navigator.clipboard.writeText(value);
                   toast.success("Copied to Clipboard", {
@@ -105,7 +105,7 @@ const Home = () => {
                   });
                 }}
               >
-                <Copy className="group-hover:text-sucess-500" size={20} />
+                <Copy className="group-hover:text-success-500" size={20} />
               </button>
             </div>
           </div>
